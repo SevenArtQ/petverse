@@ -1,3 +1,3 @@
 # Конфигурация бота
 BOT_TOKEN = "7631766370:AAF4mf7nrDIKBDCwNpRMupADnXvoyixP0R4"
-WEBAPP_URL = "https://sevenartq.github.io/petverse/"  # Обратите внимание на слэш в конце 
+WEBAPP_URL = "https://sevenartq.github.io/petverse"  # Уберем слэш в конце 
