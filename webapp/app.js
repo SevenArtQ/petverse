@@ -4,7 +4,7 @@ let tg = window.Telegram.WebApp;
 tg.expand();
 
 // Замените URL на реальный URL вашего бэкенда
-const API_URL = 'http://localhost:8000';
+const API_URL = 'https://sevenartq.github.io/petverse';  // URL вашего API
 
 // Получение данных питомца
 async function getPetData() {
