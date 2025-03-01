@@ -3,8 +3,8 @@ let tg = window.Telegram.WebApp;
 // Инициализация Telegram Mini App
 tg.expand();
 
-// Замените URL на ваш бэкенд
-const API_URL = 'https://your-backend-url.herokuapp.com';
+// Замените URL на реальный URL вашего бэкенда
+const API_URL = 'http://localhost:8000';
 
 // Получение данных питомца
 async function getPetData() {

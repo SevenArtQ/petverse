@@ -30,13 +30,25 @@ class PetVerseBot:
 
     async def start(self, update: Update, context):
         keyboard = [
-            [InlineKeyboardButton("Открыть PetVerse", web_app=WebAppInfo(url=WEBAPP_URL))]
+            [InlineKeyboardButton("🎮 Открыть PetVerse", web_app=WebAppInfo(url=WEBAPP_URL))]
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
-        await update.message.reply_text(
-            "Добро пожаловать в PetVerse! Нажмите кнопку ниже, чтобы открыть приложение:",
-            reply_markup=reply_markup
-        )
+        
+        user_id = update.effective_user.id
+        if user_id not in self.pets:
+            self.pets[user_id] = Pet(user_id)
+            await update.message.reply_text(
+                "Добро пожаловать в PetVerse! 🥚\n"
+                "У вас появилось первое яйцо питомца!\n"
+                "Нажмите кнопку ниже, чтобы открыть приложение:",
+                reply_markup=reply_markup
+            )
+        else:
+            await update.message.reply_text(
+                "С возвращением в PetVerse! 🐾\n"
+                "Нажмите кнопку ниже, чтобы открыть приложение:",
+                reply_markup=reply_markup
+            )
 
     async def name_pet(self, update: Update, context):
         user_id = update.effective_user.id
