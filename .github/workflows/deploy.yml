@@ -10,16 +10,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: Create index.html in root
-      run: |
-        mkdir public
-        cp webapp/index.html public/
-        cp webapp/styles.css public/
-        cp webapp/app.js public/
-    
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./public
+        publish_dir: .
         enable_jekyll: false 

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetVerse Test</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: var(--tg-theme-bg-color, #fff);
+            color: var(--tg-theme-text-color, #000);
+        }
+        .test-button {
+            padding: 10px 20px;
+            background-color: var(--tg-theme-button-color, #2481cc);
+            color: var(--tg-theme-button-text-color, #fff);
+            border: none;
+            border-radius: 8px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>PetVerse Test Page</h1>
+    <p>Если вы видите эту страницу, значит веб-приложение работает!</p>
+    <button class="test-button" onclick="alert('Кнопка работает!')">Тестовая кнопка</button>
+    
+    <script>
+        let tg = window.Telegram.WebApp;
+        tg.expand();
+        
+        // Показываем информацию о WebApp
+        document.body.innerHTML += `
+            <p>InitData: ${tg.initData}</p>
+            <p>Version: ${tg.version}</p>
+        `;
+    </script>
+</body>
+</html> 
